@@ -1,0 +1,18 @@
+CREATE TABLE [dbo].[UserDetails](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[Email] [varchar](50) NULL,
+	[First_Name] [varchar](50) NOT NULL,
+	[Last_Name] [varchar](50) NOT NULL,
+	[verified] [tinyint] NOT NULL,
+	[creator_stamp] [varchar](50) NULL,
+	[creator_user] [varchar](50) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+UNIQUE NONCLUSTERED 
+(
+	[Email] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
